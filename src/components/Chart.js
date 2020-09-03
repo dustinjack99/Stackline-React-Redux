@@ -10,6 +10,7 @@ export default class Charts extends Component {
     const retail = [];
     const margin = [];
     const weeks = [];
+
     this.props.item.sales.forEach(sale => {
       retail.push(sale.wholesaleSales);
       margin.push(sale.retailerMargin);
@@ -35,7 +36,7 @@ export default class Charts extends Component {
         ],
       },
       options: {
-        responsive: true,
+        // responsive: true,
         // maintainAspectRatio: false,
         legend: { display: false },
         // tooltips: { enabled: false },
@@ -70,23 +71,28 @@ export default class Charts extends Component {
   }
 
   render() {
+    const months = [
+      'JAN',
+      'FEB',
+      'MAR',
+      'APR',
+      'MAY',
+      'JUN',
+      'JUL',
+      'AUG',
+      'SEP',
+      'OCT',
+      'NOV',
+      'DEC',
+    ];
     return (
       <div className='chartDiv'>
-        <h1>Retail Sales</h1>
-        <canvas id='myChart' ref={this.chartRef}></canvas>
+        <h1 className='chartTitle'>Retail Sales</h1>
+        <canvas id='chart' ref={this.chartRef}></canvas>
         <ul className='months'>
-          <li>JAN</li>
-          <li>FEB</li>
-          <li>MAR</li>
-          <li>APR</li>
-          <li>MAY</li>
-          <li>JUN</li>
-          <li>JUL</li>
-          <li>AUG</li>
-          <li>SEP</li>
-          <li>OCT</li>
-          <li>NOV</li>
-          <li>DEC</li>
+          {months.map(month => (
+            <li classname='month'>{month}</li>
+          ))}
         </ul>
       </div>
     );

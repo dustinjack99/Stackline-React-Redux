@@ -5,21 +5,32 @@ export default class Tabs extends Component {
   render() {
     const { item } = this.props;
     return (
-      <div className='tabsDiv'>
-        <img src={item.image} alt='' />
-        <h3>{item.title}</h3>
-        <p>{item.subtitle}</p>
-        <ul>
-          {item.tags.map((tag, i) => {
-            return <li key={i}>{tag}</li>;
-          })}
-        </ul>
+      <div className='leftTab'>
+        <div className='descDiv'>
+          <img className='itemImg' src={item.image} alt='' />
+          <h3 className='itemTitle'>{item.title}</h3>
+          <p className='description'>{item.subtitle}</p>
+          <ul className='tagDiv'>
+            {item.tags.map((tag, i) => {
+              return (
+                <li className='tag' key={i}>
+                  {tag}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <div>
-          <FontAwesomeIcon icon={faHome} />
-          <h3>Overview</h3>
-
-          <FontAwesomeIcon icon={faChartBar} />
-          <h3>Sales</h3>
+          <div className='linkDiv'>
+            <div className='navLink'>
+              <FontAwesomeIcon icon={faHome} />
+              <h3 className='linkText'>OVERVIEW</h3>
+            </div>
+            <div className='navLink'>
+              <FontAwesomeIcon icon={faChartBar} />
+              <h3 className='linkText'>SALES</h3>
+            </div>
+          </div>
         </div>
       </div>
     );

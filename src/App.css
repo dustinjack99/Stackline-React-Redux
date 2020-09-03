@@ -1,35 +1,157 @@
 .App {
-  border: 1px solid purple;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   margin: auto;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+#chart {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.678);
+  padding: 25px;
+  /* width: 60%; */
 }
 
 .chartDiv {
-  border: 1px solid red;
-  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 75px;
+  padding-bottom: 20px;
 }
 
 .chartStatsBlock {
-  border: 1px solid rgb(39, 133, 255);
   margin: auto;
-  width: 85%;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 0px;
+  width: 66%;
+}
+
+.chartTitle {
+  font-size: 20px;
+  margin-left: 25px;
+  padding-top: 25px;
+  margin-top: 0px;
+}
+
+.descDiv {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  background-color: white;
+  color: slategray;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: -10px;
+  opacity: 0.6;
+  text-align: center;
+  width: 75%;
+}
+
+.itemImg {
+  height: 175px;
+  margin-top: 20px;
+  width: 175px;
+}
+
+.itemTitle {
+  font-weight: bolder;
+}
+
+.linkDiv {
+  display: block;
+  justify-self: flex-start;
 }
 
 .months {
+  color: slategray;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
+  margin-left: -40px;
+  opacity: 0.6;
+  padding-top: 10px;
 }
 
 .navHead {
-  border: 1px solid rgb(143, 143, 143);
+  background-color: white;
+  height: 75px;
+  margin-bottom: 75px;
 }
+
+.navLink {
+  align-items: center;
+  color: lightgray;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding-left: 25px;
+}
+
+.navLink:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.linkText:hover {
+  color: black;
+}
+
+.leftTab {
+  background-color: white;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.linkDiv {
+  border-top: 1px solid lightgray;
+}
+
+.linkText {
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.logo {
+  height: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
 .statsDiv {
-  border: 1px solid red;
+  background-color: white;
+  border-radius: 3px;
 }
-.tabsDiv {
-  border: 1px solid red;
-  position: absolute;
-  visibility: hidden;
+
+.tag {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 13px;
+  list-style: none;
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 4px 20px;
+}
+
+.tagDiv {
+  display: flex;
+
+  border-top: 1px solid lightgray;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#root {
+  width: 100%;
 }
