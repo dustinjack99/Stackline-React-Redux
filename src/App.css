@@ -5,18 +5,17 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: rgb(245, 247, 255);
 }
 
 #chart {
   border-bottom: 1px solid rgba(211, 211, 211, 0.678);
-  padding: 25px;
-  /* width: 60%; */
 }
 
 .chartDiv {
   background-color: white;
   border-radius: 3px;
+  filter: drop-shadow(0 0 0.25rem lightgray);
   margin-bottom: 75px;
   padding-bottom: 20px;
 }
@@ -30,10 +29,12 @@ body {
 }
 
 .chartTitle {
+  color: rgb(143, 143, 143);
   font-size: 20px;
   margin-left: 25px;
-  padding-top: 25px;
   margin-top: 0px;
+  margin-bottom: 20px;
+  padding-top: 25px;
 }
 
 .descDiv {
@@ -82,6 +83,7 @@ body {
 
 .navHead {
   background-color: white;
+  border-bottom: 1px solid lightgray;
   height: 75px;
   margin-bottom: 75px;
 }
@@ -108,8 +110,11 @@ body {
   background-color: white;
   border-radius: 3px;
   display: flex;
+  filter: drop-shadow(0 0 0.25rem lightgray);
   flex-direction: column;
   margin-left: 25px;
+  margin-bottom: 25px;
+  width: 35%;
 }
 
 .linkDiv {
@@ -127,9 +132,29 @@ body {
   padding-top: 25px;
 }
 
+.saleColumn,
+.saleItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.saleColumn {
+  font-size: 13px;
+  padding: 10px;
+}
+
+.saleItem {
+  border-top: 1px solid lightgray;
+}
+
 .statsDiv {
   background-color: white;
   border-radius: 3px;
+  filter: drop-shadow(0 0 0.25rem lightgray);
+  height: 400px;
+  margin-bottom: 25px;
+  overflow: scroll;
 }
 
 .tag {

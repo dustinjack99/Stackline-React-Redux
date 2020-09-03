@@ -17,7 +17,6 @@ export default class Charts extends Component {
       weeks.push(sale.weekEnding);
     });
 
-    console.log(retail, margin);
     new Chart(myChartRef, {
       type: 'line',
       data: {
@@ -36,10 +35,7 @@ export default class Charts extends Component {
         ],
       },
       options: {
-        // responsive: true,
-        // maintainAspectRatio: false,
         legend: { display: false },
-        // tooltips: { enabled: false },
         scales: {
           xAxes: [
             {
@@ -90,8 +86,10 @@ export default class Charts extends Component {
         <h1 className='chartTitle'>Retail Sales</h1>
         <canvas id='chart' ref={this.chartRef}></canvas>
         <ul className='months'>
-          {months.map(month => (
-            <li classname='month'>{month}</li>
+          {months.map((month, i) => (
+            <li className='month' key={i}>
+              {month}
+            </li>
           ))}
         </ul>
       </div>
