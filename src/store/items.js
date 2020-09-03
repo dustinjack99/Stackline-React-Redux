@@ -26,7 +26,6 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_ITEM:
-      console.log('reducer');
       return {
         ...state,
         item: action.payload,

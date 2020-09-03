@@ -1,23 +1,40 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
-import Chart from '../src/components/Chart';
+import { fetchItem } from './store/items';
+import Charts from '../src/components/Chart';
 import Stats from '../src/components/Stats';
 import Nav from '../src/components/Nav';
 import Tabs from '../src/components/Tabs';
-import store from './store/store';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <div className='App'>
-        <Nav />
-        <Tabs />
-        <Chart />
-        <Stats />
-      </div>
-    </Provider>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchItem();
+  }
+
+  render() {
+    if (!this.props.item) {
+      return <h1>Loading!</h1>;
+    }
+    if (this.props.item) {
+      return (
+        <>
+          <Nav />
+          <div className='App'>
+            <Tabs {...this.props} />
+            <div className='chartStatsBlock'>
+              <Charts {...this.props} />
+              <Stats {...this.props} />
+            </div>
+          </div>
+        </>
+      );
+    }
+  }
 }
 
-export default App;
+const mapStatetoProps = state => ({
+  item: state.item,
+});
+
+export default connect(mapStatetoProps, { fetchItem })(App);
